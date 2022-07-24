@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "testhud",
+  "version": "${version}",
+
+  "name": "Test Hud",
+  "description": "This is an example hud mod.",
+  "authors": [
+    "SrGnis"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/SrGnis/TestHud"
+  },
+
+  "license": "GPL v3",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.srgnis.testhud.TestHud"
+    ]
+  },
+  "mixins": [
+    "testhud.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
