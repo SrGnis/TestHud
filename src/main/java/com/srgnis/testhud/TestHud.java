@@ -1,6 +1,6 @@
 package com.srgnis.testhud;
 
-import com.srgnis.testhud.callback.TestHudCallBack;
+import com.srgnis.testhud.callback.FirstAidCallBack;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import org.slf4j.Logger;
@@ -14,6 +14,6 @@ public class TestHud implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		HudRenderCallback.EVENT.register(new TestHudCallBack());
+		HudRenderCallback.EVENT.register(new FirstAidCallBack());
 	}
 }
