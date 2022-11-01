@@ -1,38 +1,20 @@
 {
   "schemaVersion": 1,
-  "id": "testhud",
-  "version": "${version}",
-
-  "name": "Test Hud",
-  "description": "This is an example hud mod.",
-  "authors": [
-    "SrGnis"
-  ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/SrGnis/TestHud"
-  },
-
-  "license": "GPL v3",
-  "icon": "assets/modid/icon.png",
-
+  "id": "fabric-screen-handler-api-v1-testmod",
+  "name": "Fabric Screen Handler API (v1) Test Mod",
+  "version": "1.0.0",
   "environment": "*",
+  "license": "Apache-2.0",
+  "depends": {
+    "fabric-resource-loader-v0": "*",
+    "fabric-screen-handler-api-v1": "*"
+  },
   "entrypoints": {
     "main": [
-      "com.srgnis.testhud.TestHud"
+      "net.fabricmc.fabric.test.screenhandler.ScreenHandlerTest"
+    ],
+    "client": [
+      "net.fabricmc.fabric.test.screenhandler.client.ClientScreenHandlerTest"
     ]
-  },
-  "mixins": [
-    "testhud.mixins.json"
-  ],
-
-  "depends": {
-    "fabricloader": ">=0.14.6",
-    "fabric": "*",
-    "minecraft": "~1.19",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
