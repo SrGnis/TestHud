@@ -39,6 +39,8 @@ import net.fabricmc.fabric.test.screenhandler.screen.BagScreenHandler;
 import net.fabricmc.fabric.test.screenhandler.screen.BoxScreenHandler;
 import net.fabricmc.fabric.test.screenhandler.screen.PositionedBagScreenHandler;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ScreenHandlerTest implements ModInitializer {
 	public static final String ID = "fabric-screen-handler-api-v1-testmod";
@@ -58,6 +60,8 @@ public class ScreenHandlerTest implements ModInitializer {
 	public static Identifier id(String path) {
 		return new Identifier(ID, path);
 	}
+
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	@Override
 	public void onInitialize() {

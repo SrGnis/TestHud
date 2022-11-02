@@ -17,6 +17,7 @@
 package net.fabricmc.fabric.test.screenhandler.item;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import static net.fabricmc.fabric.test.screenhandler.ScreenHandlerTest.LOGGER;
 import net.fabricmc.fabric.test.screenhandler.screen.EntitiedBagScreenHandler;
 import net.fabricmc.fabric.test.screenhandler.screen.PositionedBagScreenHandler;
 import net.minecraft.entity.LivingEntity;
@@ -34,6 +35,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+
 public class EntitiedBagItem extends BagItem {
 	public EntitiedBagItem(Settings settings) {
 		super(settings);
@@ -41,6 +43,7 @@ public class EntitiedBagItem extends BagItem {
 
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+		LOGGER.warn("EntitiedBagItem.use");
 		ItemStack stack = user.getStackInHand(hand);
 		user.openHandledScreen(createScreenHandlerFactory(stack, user));
 		return TypedActionResult.success(stack);
@@ -56,6 +59,7 @@ public class EntitiedBagItem extends BagItem {
 		return new ExtendedScreenHandlerFactory() {
 			@Override
 			public ScreenHandler createMenu(int syncId, PlayerInventory inventory, PlayerEntity player) {
+				LOGGER.warn("EntitiedBagItem.createMenu");
 				return new EntitiedBagScreenHandler(syncId, inventory, new BagInventory(stack), entity);
 			}
 
@@ -66,6 +70,7 @@ public class EntitiedBagItem extends BagItem {
 
 			@Override
 			public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
+				LOGGER.warn("EntitiedBagItem.writeScreenOpeningData");
 				buf.writeInt(entity.getId());
 			}
 		};

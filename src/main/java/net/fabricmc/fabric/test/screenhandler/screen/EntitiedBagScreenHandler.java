@@ -28,24 +28,31 @@ import net.minecraft.world.World;
 
 import java.util.UUID;
 
+import static net.fabricmc.fabric.test.screenhandler.ScreenHandlerTest.LOGGER;
+
 public class EntitiedBagScreenHandler extends BagScreenHandler {
 	private final LivingEntity entity;
 
 	public EntitiedBagScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
 		this(syncId, playerInventory, new SimpleInventory(9), readEntity(buf, playerInventory.player.world));
+		LOGGER.warn("EntitiedBagScreenHandler buf");
+
 	}
 
 	public EntitiedBagScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, LivingEntity entity) {
 		super(ScreenHandlerTest.ENTITIED_BAG_SCREEN_HANDLER, syncId, playerInventory, inventory);
+		LOGGER.warn("EntitiedBagScreenHandler entity");
 		this.entity = entity;
 	}
 
 	private static LivingEntity readEntity(PacketByteBuf buf, World world) {
+		LOGGER.warn("EntitiedBagScreenHandler.readEntity");
 		int id = buf.readInt();
 		return (LivingEntity) world.getEntityById(id);
 	}
 
 	public LivingEntity getEntity() {
+		LOGGER.warn("EntitiedBagScreenHandler.getEntity");
 		return entity;
 	}
 }

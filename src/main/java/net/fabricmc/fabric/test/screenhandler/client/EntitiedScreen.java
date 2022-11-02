@@ -29,11 +29,14 @@ import net.minecraft.util.Identifier;
 
 import java.util.Optional;
 
+import static net.fabricmc.fabric.test.screenhandler.ScreenHandlerTest.LOGGER;
+
 public class EntitiedScreen extends HandledScreen<ScreenHandler> {
 	private static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
 
 	public EntitiedScreen(ScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, getEntityText(handler).getName());
+		LOGGER.warn("EntitiedScreen");
 	}
 
 	private static LivingEntity getEntityText(ScreenHandler handler) {
