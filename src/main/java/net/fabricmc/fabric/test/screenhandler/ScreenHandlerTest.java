@@ -16,6 +16,8 @@
 
 package net.fabricmc.fabric.test.screenhandler;
 
+import net.fabricmc.fabric.test.screenhandler.item.EntitiedBagItem;
+import net.fabricmc.fabric.test.screenhandler.screen.EntitiedBagScreenHandler;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -50,6 +52,9 @@ public class ScreenHandlerTest implements ModInitializer {
 	public static final ScreenHandlerType<PositionedBagScreenHandler> POSITIONED_BAG_SCREEN_HANDLER = new ExtendedScreenHandlerType<>(PositionedBagScreenHandler::new);
 	public static final ScreenHandlerType<BoxScreenHandler> BOX_SCREEN_HANDLER = new ExtendedScreenHandlerType<>(BoxScreenHandler::new);
 
+	public static final Item ENTITIED_BAG = new EntitiedBagItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(1));
+	public static final ScreenHandlerType<EntitiedBagScreenHandler> ENTITIED_BAG_SCREEN_HANDLER = new ExtendedScreenHandlerType<>(EntitiedBagScreenHandler::new);
+
 	public static Identifier id(String path) {
 		return new Identifier(ID, path);
 	}
@@ -64,5 +69,8 @@ public class ScreenHandlerTest implements ModInitializer {
 		Registry.register(Registry.SCREEN_HANDLER, id("bag"), BAG_SCREEN_HANDLER);
 		Registry.register(Registry.SCREEN_HANDLER, id("positioned_bag"), POSITIONED_BAG_SCREEN_HANDLER);
 		Registry.register(Registry.SCREEN_HANDLER, id("box"), BOX_SCREEN_HANDLER);
+
+		Registry.register(Registry.ITEM, id("entitied_bag"), ENTITIED_BAG);
+		Registry.register(Registry.SCREEN_HANDLER, id("entitied_bag"), ENTITIED_BAG_SCREEN_HANDLER);
 	}
 }

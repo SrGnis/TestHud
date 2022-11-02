@@ -28,5 +28,6 @@ public class ClientScreenHandlerTest implements ClientModInitializer {
 		HandledScreens.register(ScreenHandlerTest.BAG_SCREEN_HANDLER, Generic3x3ContainerScreen::new);
 		HandledScreens.register(ScreenHandlerTest.POSITIONED_BAG_SCREEN_HANDLER, PositionedScreen::new);
 		HandledScreens.register(ScreenHandlerTest.BOX_SCREEN_HANDLER, PositionedScreen::new);
+		HandledScreens.register(ScreenHandlerTest.ENTITIED_BAG_SCREEN_HANDLER, EntitiedScreen::new);
 	}
 }

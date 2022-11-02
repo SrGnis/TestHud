@@ -36,7 +36,7 @@ public class EntitiedBagScreenHandler extends BagScreenHandler {
 	}
 
 	public EntitiedBagScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, LivingEntity entity) {
-		super(ScreenHandlerTest.POSITIONED_BAG_SCREEN_HANDLER, syncId, playerInventory, inventory);
+		super(ScreenHandlerTest.ENTITIED_BAG_SCREEN_HANDLER, syncId, playerInventory, inventory);
 		this.entity = entity;
 	}
 
